@@ -14,10 +14,10 @@ Alurithm menggunakan algoritma pencarian DFS dan BFS untuk menentukan jalur eksp
 
 ## 👥 Anggota Kelompok
 
-1. @nmirran Nayla Alya Namira (242410103004)
-2. @staudaa Siti Raudatul Jannah (242410103048)
-3. @tanbyhouse Allyya Novita Risqiyanti (242410103071)
-4. @Izzatialifia Izzati Alifia Yusifa (242410103085)
+1. Nayla Alya Namira (242410103004)
+2. Siti Raudatul Jannah (242410103048)
+3. Allyya Novita Risqiyanti (242410103071)
+4. Izzati Alifia Yusifa (242410103085)
 
 ## 🚀 How to run
 
