@@ -17,7 +17,7 @@ graf_labirin = {
     },
     'L1': {
         'benar': 'L2',
-        'salah': 'IN'
+        'salah': 'L1'
     },
     'L2': {
         'benar': 'L3',
