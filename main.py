@@ -3,7 +3,7 @@ from Logic_BFS_DFS import graf_labirin
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('D:\KULIAH\ALGO II\Alurithm P2\Alurithm\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
