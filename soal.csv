@@ -2,4 +2,5 @@ Soal_ID,Tingkat,Tipe,Soal,Opsi_A,Opsi_B,Opsi_C,Opsi_D,Jawaban
 1,Easy,PG,Simbol perkalian dalam Python adalah?,*,/,+,-,A
 2,Medium,Esai,Berapa hasil dari 5 % 2 dalam Python?,,,,,1
 3,Medium,PG,Fungsi len() digunakan untuk...?,menjumlahkan,mencari panjang,menghapus data,mencetak karakter,B
-4,Hard,Esai,Jika sebuah fungsi rekursif dipanggil dengan n = 3 dan memanggil dirinya dua kali setiap kali berapa total panggilan fungsi?,,,,,7
+4,Hard,Esai,Jika sebuah fungsi rekursif dipanggil dengan n = 3 dan memanggil dirinya dua kali setiap kali berapa total panggilan fungsi? (Jawab dengan angka),,,,,7
+5,Easy,PG,Simbol penjumlahan dalam Python adalah?,*,/,+,-,C

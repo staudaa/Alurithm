@@ -5,14 +5,31 @@ graf_labirin = {
     },
     'B1': {
         'benar': 'OUT',
-        'salah': 'IN'
+        'salah': 'S1'
     },
     'S1': {
+        'benar': 'S2',
+        'salah': 'L1'
+    },
+    'S2': {
         'benar': 'OUT',
+        'salah': 'S1'
+    },
+    'L1': {
+        'benar': 'L2',
         'salah': 'IN'
+    },
+    'L2': {
+        'benar': 'L3',
+        'salah': 'L1'
+    },
+    'L3': {
+        'benar': 'OUT',
+        'salah': 'L2'
     },
     'OUT': {}
 }
+
 
 def rute_gabungan(graf_labirin, simpul_mulai, jawaban_user):
     rute_dilalui = []
@@ -32,5 +49,5 @@ def rute_gabungan(graf_labirin, simpul_mulai, jawaban_user):
 
     return rute_dilalui
 
-hasil_user = ['salah', 'salah', 'benar', 'benar']  #contoh simulasi aja (nnti klo udh diimplementasikan ke soal bisa diganti sesuai input user dengan baca csvnya)
-print("Rute Labirin yang dilalui:", " → ".join(rute_gabungan(graf_labirin, 'IN', hasil_user)))
+# hasil_user = ['salah', 'salah', 'benar', 'benar']  #contoh simulasi aja (nnti klo udh diimplementasikan ke soal bisa diganti sesuai input user dengan baca csvnya)
+# print("Rute Labirin yang dilalui:", " → ".join(rute_gabungan(graf_labirin, 'IN', hasil_user)))
