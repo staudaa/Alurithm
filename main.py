@@ -10,9 +10,9 @@ def load_soal():
     return soal_map
 
 def tingkat_node(node):
-    if node in ['IN','S1']:
+    if node in ['IN']:
         return 'Easy'
-    elif node in ['B1', 'L1']:
+    elif node in ['B1', 'S1', 'L1']:
         return 'Medium'
     elif node in ['S2', 'L2', 'L3']:
         return 'Hard'
@@ -22,6 +22,7 @@ def main():
     soal_map = load_soal()
     posisi = 'IN'
     riwayat = [posisi]
+    nyawa = 3
 
     while posisi != 'OUT':
         tingkat = tingkat_node(posisi)
@@ -50,6 +51,16 @@ def main():
         hasil = 'benar' if benar else 'salah'
         print("Jawaban Benar!" if benar else "Jawaban Salah.")
 
+        # nyawa buat node L1
+        if posisi == 'L1' and hasil == 'salah':
+            nyawa -= 1
+            print(f"Nyawa kamu tersisa: {nyawa}")
+            if nyawa == 0:
+                print("Nyawa Kamu Habis! Game over!!!")
+                break
+            continue
+        elif posisi == 'L1' and hasil == 'benar':
+            nyawa = 3
         if hasil in graf_labirin[posisi]:
             posisi = graf_labirin[posisi][hasil]
             riwayat.append(posisi)
