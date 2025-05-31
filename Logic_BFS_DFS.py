@@ -13,7 +13,7 @@ graf_labirin = {
     },
     'S2': {
         'benar': 'OUT',
-        'salah': 'S1'
+        'salah': 'L1'
     },
     'L1': {
         'benar': 'L2',

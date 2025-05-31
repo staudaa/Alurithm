@@ -3,7 +3,7 @@ from Logic_BFS_DFS import graf_labirin
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('D:\COLLEGE LIFE\Semester 2\ALGORITMA DAN PEMROGRAMAN II\ALURITHM_P1\Alurithm\\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
@@ -67,7 +67,22 @@ def main():
         else:
             print("Tidak ada jalur lanjutan.")
             break
-
+        
+        # Reward saat user mencapai node Out 
+    if posisi == 'OUT':
+        print("\nSelamat! Kamu telah mencapai tujuan akhir!")
+        
+        if riwayat == ['IN', 'B1', 'OUT']:
+            print("Kamu mendapatkan ⭐⭐⭐⭐⭐ (5 star)")
+        elif len(riwayat) in [4, 5]:
+            print("Kamu mendapatkan ⭐⭐⭐⭐ (4 star)")
+        elif len(riwayat) in [6, 7, 8]:
+            print("Kamu mendapatkan ⭐⭐⭐ (3 star)")
+        elif riwayat.count('L1') > 1  and riwayat.count('L2') == 1 and riwayat.count('L3') == 1 and 'OUT' in riwayat:
+            print("Kamu mendapatkan ⭐⭐ (2 star)")
+        else:
+            print("Kamu mendapatkan ⭐ (1 star)")
+        
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
 
