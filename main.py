@@ -23,13 +23,14 @@ def main():
     posisi = 'IN'
     riwayat = [posisi]
     nyawa = 3
+    skor = 100
 
     while posisi != 'OUT':
         tingkat = tingkat_node(posisi)
         if not soal_map[tingkat]:
             print(f"Tidak ada soal tersedia untuk tingkat {tingkat}.")
             break
-
+        
         soal = soal_map[tingkat].pop(0)
         print(f"\nLokasi: {posisi} | Tingkat: {tingkat}")
         print(f"{soal['Soal']}")
@@ -50,8 +51,12 @@ def main():
 
         hasil = 'benar' if benar else 'salah'
         print("Jawaban Benar!" if benar else "Jawaban Salah.")
+        if hasil == 'salah':
+            skor -= 10
+            if skor <= 0:
+                print("\nGame over!!!")
+                break
 
-        # nyawa buat node L1
         if posisi == 'L1' and hasil == 'salah':
             nyawa -= 1
             print(f"Nyawa kamu tersisa: {nyawa}")
@@ -68,20 +73,9 @@ def main():
             print("Tidak ada jalur lanjutan.")
             break
         
-        # Reward saat user mencapai node Out 
     if posisi == 'OUT':
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
-        
-        if riwayat == ['IN', 'B1', 'OUT']:
-            print("Kamu mendapatkan ⭐⭐⭐⭐⭐ (5 star)")
-        elif len(riwayat) in [4, 5]:
-            print("Kamu mendapatkan ⭐⭐⭐⭐ (4 star)")
-        elif len(riwayat) in [6, 7, 8]:
-            print("Kamu mendapatkan ⭐⭐⭐ (3 star)")
-        elif riwayat.count('L1') > 1  and riwayat.count('L2') == 1 and riwayat.count('L3') == 1 and 'OUT' in riwayat:
-            print("Kamu mendapatkan ⭐⭐ (2 star)")
-        else:
-            print("Kamu mendapatkan ⭐ (1 star)")
+        print (f"Skor Anda: {skor}")
         
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
