@@ -1,9 +1,11 @@
 import csv
+import os
 from Logic_BFS_DFS import graf_labirin
+from auth import login, register
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('D:\COLLEGE LIFE\Semester 2\ALGORITMA DAN PEMROGRAMAN II\ALURITHM_P1\Alurithm\\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('D:\COLLEGE LIFE\Semester 2\ALGORITMA DAN PEMROGRAMAN II\ALURITHM_P1\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
@@ -18,7 +20,7 @@ def tingkat_node(node):
         return 'Hard'
     return None
 
-def main():
+def main_game():
     soal_map = load_soal()
     posisi = 'IN'
     riwayat = [posisi]
@@ -79,6 +81,55 @@ def main():
         
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
+    
+    input("\nTekan Enter untuk kembali ke menu...")
+
+def autentikasi(username):
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Selamat datang, {username}!")
+        print("\nMenu:")
+        print("1. Lihat Leaderboard")
+        print("2. Mulai Permainan")
+        print("3. Logout")
+        pilihan = input("Masukkan pilihan (1/2/3): ").strip()
+        if pilihan == '1':
+            print("Tampilkan leaderboard")
+        elif pilihan == '2':
+            print("1. Mulai")
+            print("2. Kembali")
+            menu = input("Masukkan pilihan menu (1/2) : ")
+            if menu == "1" : 
+                main_game()
+            elif menu == "2" :
+                continue
+        elif pilihan == '3':
+            print("Anda telah logout.")
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+
+def main():
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Selamat datang di Alurithm! \nPermainan labirin berbasis soal Algoritma dan Pemrograman Dasar")
+        print("\nPilih opsi:")
+        print("1. Register")
+        print("2. Login")
+        print("3. Keluar")
+        pilihan = input("Masukkan pilihan (1/2/3): ").strip()
+        if pilihan == '1':
+            register()
+        elif pilihan == '2':
+            username = login()
+            if username:
+                # Call the autentikasi function with the logged-in username
+                autentikasi(username[0])  # username is a list, so we take the first element
+        elif pilihan == '3':
+            print("Terima kasih sudah mencoba. Sampai jumpa!")
+            break
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
 
 if __name__ == '__main__':
     main()
