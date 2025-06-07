@@ -1,15 +1,15 @@
 import os
 import pandas as pd
 
+file_path = 'db/accounts.csv'
+
 def accountData():
-    file_path = 'db/accounts.csv'
-    
     if not os.path.isfile(file_path) or os.path.getsize(file_path) == 0:
-        df = pd.DataFrame(columns=['Username', 'Password'])
+        df = pd.DataFrame(columns=['Index', 'Username', 'Password'])
         df.to_csv(file_path, index=False)
         return df
     
-    return pd.read_csv(file_path, dtype={'Username': str, 'Password': str})
+    return pd.read_csv(file_path, dtype={'Index': int,'Username': str, 'Password': str})
 
 def login(errorMsg=False):
     os.system('cls')
@@ -37,9 +37,11 @@ def login(errorMsg=False):
     return [account.iloc[0]["Username"]]
   
 def addAccount(username=None, password=None):
-    file_path = 'db/accounts.csv'
+    accounts = accountData()
+    next_index = accounts.shape[0] + 1
     
     new_account = pd.DataFrame({
+        'Index': [next_index],
         'Username': [username],
         'Password': [str(password).strip()]
     })
