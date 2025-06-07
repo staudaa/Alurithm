@@ -1,5 +1,5 @@
-Soal_ID,Tingkat,Tipe,Soal,Opsi_A,Opsi_B,Opsi_C,Opsi_D,Jawaban
-1,Medium,PG,"Apa output dari kode berikut ini?
+Soal_ID,Tingkat,Tipe,Poin,Soal,Opsi_A,Opsi_B,Opsi_C,Opsi_D,Jawaban
+1,Medium,PG,20,"Apa output dari kode berikut ini?
 def hitung(x):
     if x % 2 == 0:
         return x * 2
@@ -7,129 +7,129 @@ def hitung(x):
         return x + 1
 
 print(hitung(3))",6,3,4,2,C
-2,Medium,PG,"Manakah dari berikut ini yang menghasilkan output [3, 4, 5]?","list(range(3, 6))","list(range(3, 5))","list(range(2, 5))","list(range(4, 6))",A
-3,Medium,PG,"Apa yang dikembalikan oleh fungsi berikut?
+2,Medium,PG,20,"Manakah dari berikut ini yang menghasilkan output [3, 4, 5]?","list(range(3, 6))","list(range(3, 5))","list(range(2, 5))","list(range(4, 6))",A
+3,Medium,PG,20,"Apa yang dikembalikan oleh fungsi berikut?
 def f(a, b=2):
     return a ** b
 
 print(f(3))",6,9,1,Error,B
-4,Medium,PG,"Apa hasil dari kode ini?
+4,Medium,PG,20,"Apa hasil dari kode ini?
 a = [1, 2, 3]
 b = a
 b.append(4)
 print(a)","[1, 2, 3]","[1, 2, 3, 4]","[4, 1, 2, 3]",Error,B
-5,Medium,PG,"Apa output dari:
+5,Medium,PG,20,"Apa output dari:
 x = 3
 y = 5
 print(x > 2 and y < 10)",True,False,Error,None,A
-6,Medium,PG,"Apa hasil dari:
+6,Medium,PG,20,"Apa hasil dari:
 print(bool([]))",True,False,Error,None,B
-7,Medium,PG,"Apa yang dilakukan oleh kode ini?
+7,Medium,PG,20,"Apa yang dilakukan oleh kode ini?
 for i in range(1, 6, 2):
     print(i, end="" "")",Menampilkan bilangan genap,Menampilkan angka 1 2 3 4 5,Menampilkan angka 1 3 5,Error,C
-8,Medium,PG,"Manakah cara yang benar untuk memeriksa apakah elemen ""a"" ada dalam list berikut?
+8,Medium,PG,20,"Manakah cara yang benar untuk memeriksa apakah elemen ""a"" ada dalam list berikut?
 my_list = [""a"", ""b"", ""c""]"," ""a"" exists my_list "," if ""a"" in my_list: "," if my_list has ""a"" "," contains(""a"", my_list) ",B
-9,Medium,PG,Apa hasil dari print(type(3.14))?,<class 'float'>,<class 'int'>,<class 'double'>,<class 'number'>,A
-10,Medium,PG,Fungsi rekursif harus memiliki:,Satu parameter saja,Return None,Kondisi terminasi (base case),Fungsi tambahan,C
-11,Medium,PG,Struktur data manakah yang memiliki waktu akses tercepat untuk pencarian berdasarkan key?,List,Tuple,Dictionary,Set,C
-12,Medium,PG,"Apa hasil dari set([1, 2, 2, 3, 3])?","{1, 2, 3}","[1, 2, 2, 3, 3]","(1, 2, 3)",Error,A
-13,Medium,PG,Fungsi type(100) akan mengembalikan?,<class 'string'>,<class 'number'>,<class 'int'>,<class 'float'>,C
-14,Medium,PG,"Apa hasil dari kode berikut?
+9,Medium,PG,20,Apa hasil dari print(type(3.14))?,<class 'float'>,<class 'int'>,<class 'double'>,<class 'number'>,A
+10,Medium,PG,20,Fungsi rekursif harus memiliki:,Satu parameter saja,Return None,Kondisi terminasi (base case),Fungsi tambahan,C
+11,Medium,PG,20,Struktur data manakah yang memiliki waktu akses tercepat untuk pencarian berdasarkan key?,List,Tuple,Dictionary,Set,C
+12,Medium,PG,20,"Apa hasil dari set([1, 2, 2, 3, 3])?","{1, 2, 3}","[1, 2, 2, 3, 3]","(1, 2, 3)",Error,A
+13,Medium,PG,20,Fungsi type(100) akan mengembalikan?,<class 'string'>,<class 'number'>,<class 'int'>,<class 'float'>,C
+14,Medium,PG,20,"Apa hasil dari kode berikut?
 a = [1, 2]
 b = a.copy()
 b.append(3)
 print(a)","[1, 2, 3]","[1, 2]",Error,[],B
-15,Medium,PG,Fungsi map() dalam Python digunakan untuk:,A. Mengulang semua elemen dalam dict,B. Menghapus item dalam list,C. Mengubah setiap elemen dalam iterable,D. Menyalin list,C
-16,Medium,PG,Apa fungsi dari perintah enumerate()?,A. Mengubah list ke dalam bentuk tuple,B. Mengembalikan indeks dan nilai elemen dalam iterasi,C. Mengurutkan list,D. Menambahkan elemen,B
-17,Medium,PG,Manakah fungsi yang mengembalikan list baru yang berisi elemen yang sesuai dengan syarat tertentu?,map(),filter(),reduce(),lambda,B
-18,Medium,PG,"Apa output dari:
+15,Medium,PG,20,Fungsi map() dalam Python digunakan untuk:,A. Mengulang semua elemen dalam dict,B. Menghapus item dalam list,C. Mengubah setiap elemen dalam iterable,D. Menyalin list,C
+16,Medium,PG,20,Apa fungsi dari perintah enumerate()?,A. Mengubah list ke dalam bentuk tuple,B. Mengembalikan indeks dan nilai elemen dalam iterasi,C. Mengurutkan list,D. Menambahkan elemen,B
+17,Medium,PG,20,Manakah fungsi yang mengembalikan list baru yang berisi elemen yang sesuai dengan syarat tertentu?,map(),filter(),reduce(),lambda,B
+18,Medium,PG,20,"Apa output dari:
 print([i**2 for i in range(3)])","[1, 2, 3]","[0, 1, 4]","[1, 4, 9]","[0, 2, 4]",B
-19,Medium,PG,"Apa output dari:print(""Python""[0])",P,y,0,Error,A
-20,Medium,PG,"Jika x = None, maka bool(x) bernilai:",A. True,B. False,C. None,D. Error,B
-21,Medium,PG,"Apa hasil dari set([1, 2, 2, 3, 3])?","{1, 2, 3}","[1, 2, 2, 3, 3]","(1, 2, 3)",Error,A
-22,Medium,PG,Apa hasil dari bool(0)?,True,False,Error,None,B
-23,Medium,PG,Fungsi map() dalam Python digunakan untuk?,Mengulang semua elemen dalam dict,Menghapus item dalam list,Mengubah setiap elemen dalam iterable,Menyalin list,C
-24,Medium,PG,Apa fungsi dari perintah enumerate()?,Mengubah list ke dalam bentuk tuple,Mengembalikan indeks dan nilai elemen dalam iterasi,Mengurutkan list,Menambahkan elemen,B
-25,Medium,PG,Apa output dari: print([i**2 for i in range(3)]),"[1, 2, 3]","[0, 1, 4]","[1, 4, 9]","[0, 2, 4]",B 
-26,Medium,PG,Jika x = None maka bool(x) bernilai?,True,False,None,Error,B
-27,Medium,PG,"Fungsi max([3, 7, 2]) akan mengembalikan?",2,3,7,Error,C
-28,Medium,PG,"Fungsi berikut bertujuan untuk apa? 
+19,Medium,PG,20,"Apa output dari:print(""Python""[0])",P,y,0,Error,A
+20,Medium,PG,20,"Jika x = None, maka bool(x) bernilai:",A. True,B. False,C. None,D. Error,B
+21,Medium,PG,20,"Apa hasil dari set([1, 2, 2, 3, 3])?","{1, 2, 3}","[1, 2, 2, 3, 3]","(1, 2, 3)",Error,A
+22,Medium,PG,20,Apa hasil dari bool(0)?,True,False,Error,None,B
+23,Medium,PG,20,Fungsi map() dalam Python digunakan untuk?,Mengulang semua elemen dalam dict,Menghapus item dalam list,Mengubah setiap elemen dalam iterable,Menyalin list,C
+24,Medium,PG,20,Apa fungsi dari perintah enumerate()?,Mengubah list ke dalam bentuk tuple,Mengembalikan indeks dan nilai elemen dalam iterasi,Mengurutkan list,Menambahkan elemen,B
+25,Medium,PG,20,Apa output dari: print([i**2 for i in range(3)]),"[1, 2, 3]","[0, 1, 4]","[1, 4, 9]","[0, 2, 4]",B 
+26,Medium,PG,20,Jika x = None maka bool(x) bernilai?,True,False,None,Error,B
+27,Medium,PG,20,"Fungsi max([3, 7, 2]) akan mengembalikan?",2,3,7,Error,C
+28,Medium,PG,20,"Fungsi berikut bertujuan untuk apa? 
 def mystery(x):
     return x[::-1]",Menghapus elemen terakhir,Menyalin list,Membalik urutan list atau string,Mengalikan nilai dalam list,C
-29,Medium,PG,"Apa output dari kode berikut?
+29,Medium,PG,20,"Apa output dari kode berikut?
 def f(x=[]):
     x.append(1)
     return x
 
 print(f())
 print(f())","[1] dan [1]","[1] dan [1, 1]","[1, 1] dan [1, 1]",Error,B
-30,Medium,PG,Fungsi rekursif cocok digunakan untuk permasalahan seperti?,Mencetak data dalam urutan,Loop tanpa batas,Permasalahan faktorial dan Fibonacci,Operasi aritmatika sederhana,C
-31,Medium,Esai,Bagaimana cara membalik string di Python?,,,,,[::-1]
-32,Medium,Esai,Apa hasil dari: print(bool([])),,,,,False
-33,Medium,Esai,"Apa hasil dari:
+30,Medium,PG,20,Fungsi rekursif cocok digunakan untuk permasalahan seperti?,Mencetak data dalam urutan,Loop tanpa batas,Permasalahan faktorial dan Fibonacci,Operasi aritmatika sederhana,C
+31,Medium,Esai,20,Bagaimana cara membalik string di Python?,,,,,[::-1]
+32,Medium,Esai,20,Apa hasil dari: print(bool([])),,,,,False
+33,Medium,Esai,20,"Apa hasil dari:
 def func(a, b):
     return a + b
 
 print(func(""3"", ""4""))",,,,,34
-34,Medium,Esai,"Berapa kali perulangan dilakukan oleh:
+34,Medium,Esai,20,"Berapa kali perulangan dilakukan oleh:
 for i in range(2, 10, 3):
     print(i)",,,,,3
-35,Medium,Esai,"Jika my_dict = {""a"": 1, ""b"": 2}, maka my_dict.get(""c"", 0) mengembalikan:",,,,,0
-14,Medium,Esai,"Apa output dari kode berikut?
+35,Medium,Esai,20,"Jika my_dict = {""a"": 1, ""b"": 2}, maka my_dict.get(""c"", 0) mengembalikan:",,,,,0
+14,Medium,Esai,20,"Apa output dari kode berikut?
 x = [1, 2, 3]
 print(x[1:])",,,,,"[2, 3]"
-36,Medium,Esai,"Apa yang akan ditampilkan oleh kode berikut?
+36,Medium,Esai,20,"Apa yang akan ditampilkan oleh kode berikut?
 x = [1, 2, 3]
 print(sum(x) / len(x))",,,,,2.0
-37,Medium,Esai,"Apa output dari:
+37,Medium,Esai,20,"Apa output dari:
 a = {1, 2, 3}
 a.add(2)
 print(len(a))",,,,,3
-38,Medium,Esai,"Apa output dari kode berikut?
+38,Medium,Esai,20,"Apa output dari kode berikut?
 for i in range(1, 10, 3):
     print(i, end="" "")",,,,,1 4 7
-39,Medium,Esai,"Hasil dari len([10, 20, 30, 40]) adalah?",,,,,4
-40,Medium,Esai,"Apa hasil dari int(""123"") + int(""77"")?",,,,,150
-41,Medium,Esai," Apa output dari:
+39,Medium,Esai,20,"Hasil dari len([10, 20, 30, 40]) adalah?",,,,,4
+40,Medium,Esai,20,"Apa hasil dari int(""123"") + int(""77"")?",,,,,150
+41,Medium,Esai,20,"Apa output dari:
 x = [1, 2, 3, 4]
 print(x[2])",,,,,3
-42,Medium,Esai," Hasil dari:
+42,Medium,Esai,20,"Hasil dari:
 x = [1, 2]
 x.append(3)
 print(len(x))",,,,,3
-43,Medium,Esai,"Output dari kode berikut:
+43,Medium,Esai,20,"Output dari kode berikut:
 x = [1, 3, 5]
 x[1] = x[1] + x[0]
 print(x[1])",,,,,4
-44,Medium,Esai,"Hasil dari kode:
+44,Medium,Esai,20,"Hasil dari kode:
 def hitung(x):
     return x * 2 + 1
 
 print(hitung(4))",,,,,9
-45,Medium,Esai,"Apa hasil dari:
+45,Medium,Esai,20,"Apa hasil dari:
 for i in range(1, 6):
     if i % 2 == 0:
         print(i, end="" "")",,,,,2 4
-46,Medium,Esai," Apa output dari kode berikut?
+46,Medium,Esai,20,"Apa output dari kode berikut?
 total = 0
 for i in range(1, 4):
     total += i
 print(total)",,,,,6
-47,Medium,Esai,"Hasil dari:
+47,Medium,Esai,20,"Hasil dari:
 print(len(""Python"") + len(""Code""))",,,,,10
-48,Medium,Esai,"Output dari kode berikut:
+48,Medium,Esai,20,"Output dari kode berikut:
 data = [1, 2, 3]
 print(sum(data) // len(data))",,,,,2
-49,Medium,Esai,"Apa hasil dari:
+49,Medium,Esai,20,"Apa hasil dari:
 a = 7
 b = 2
 print(a // b + a % b)",,,,,5
-50,Medium,Esai,"Apa hasil dari:
+50,Medium,Esai,20,"Apa hasil dari:
 def f(x):
     return x + 2
 
 print(f(f(1)))",,,,,6
-51,Hard,Esai,"Berapa output dari kode berikut?
+51,Hard,Esai,30,"Berapa output dari kode berikut?
 def faktorial(n):
     if n == 0:
         return 1
@@ -137,12 +137,12 @@ def faktorial(n):
         return n * faktorial(n - 1)
 
 print(faktorial(5))",,,,,120
-52,Hard,Esai,"Berapa hasil dari:
+52,Hard,Esai,30,"Berapa hasil dari:
 sum([i for i in range(1, 6) if i % 2 == 0])",,,,,6
-53,Hard,Esai,Berapa nilai ke-8 dari deret Fibonacci (fib(8)) menggunakan iterasi?,,,,,21
-54,Hard,Esai,Berapa hasil dari sum(i for i in range(10) if i % 2 == 0)?,,,,,20
-55,Hard,Esai,"Apa output dari {'a': 1, 'b': 2}['b']?",,,,,2
-56,Hard,Esai,"Berapa output dari kode berikut?
+53,Hard,Esai,30,Berapa nilai ke-8 dari deret Fibonacci (fib(8)) menggunakan iterasi?,,,,,21
+54,Hard,Esai,30,Berapa hasil dari sum(i for i in range(10) if i % 2 == 0)?,,,,,20
+55,Hard,Esai,30,"Apa output dari {'a': 1, 'b': 2}['b']?",,,,,2
+56,Hard,Esai,30,"Berapa output dari kode berikut?
 def faktorial(n):
     if n == 0:
         return 1
@@ -150,7 +150,7 @@ def faktorial(n):
         return n * faktorial(n - 1)
 
 print(faktorial(5))",,,,,120
-57,Hard,Esai,"Berapa output dari kode berikut?
+57,Hard,Esai,30,"Berapa output dari kode berikut?
 def fib(n):
     a, b = 0, 1
     for _ in range(n):
@@ -158,30 +158,30 @@ def fib(n):
     return a
 
 print(fib(7))",,,,,13
-58,Hard,Esai,"Apa output dari kode berikut:
+58,Hard,Esai,30,"Apa output dari kode berikut:
 x = [1, 2, 3]
 x.append([4, 5])
 print(len(x))",,,,,4
-59,Hard,Esai,"cari hasil output dari kode berikut:
+59,Hard,Esai,30,"cari hasil output dari kode berikut:
 a = [1, 2, 3]
 b = a
 b[0] = 10
 print(a)",,,,,"[10, 2, 3]"
-60,Hard,Esai,"Apa output dari kode berikut:
+60,Hard,Esai,30,"Apa output dari kode berikut:
 a = [1, 2, 3]
 print(4 in a or 2 in a)",,,,,True 
-61,Hard,Esai,"Apa output dari kode berikut:
+61,Hard,Esai,30,"Apa output dari kode berikut:
 def fact(n):
     return 1 if n == 0 else n * fact(n - 1)
 
 print(fact(4))",,,,,24
-62,Hard,Esai,"cari hasil output dari kode berikut:
+62,Hard,Esai,30,"cari hasil output dari kode berikut:
 count = 0
 for i in range(3):
     for j in range(2):
         count += 1
 print(count)",,,,,6
-63,Hard,Esai,"Cari hasil output dari kode berikut:
+63,Hard,Esai,30,"Cari hasil output dari kode berikut:
 def mystery(n):
     result = 0
     for i in range(1, n+1):
@@ -192,7 +192,7 @@ def mystery(n):
     return result
 
 print(mystery(5))",,,,,-3
-64,Hard,Esai,"Cari hasil output dari kode berikut:
+64,Hard,Esai,30,"Cari hasil output dari kode berikut:
 def is_prime(x):
     if x < 2:
         return False
@@ -207,47 +207,47 @@ for i in range(2, 20):
         count += 1
 
 print(count)",,,,,8
-65,Hard,Esai,"cari hasil output dari kode berikut:
+65,Hard,Esai,30,"cari hasil output dari kode berikut:
 nums = [1, 2, 3]
 nums.append(nums)
 print(len(nums))",,,,,4
-66,Hard,Esai,"Apa output dari kode berikut:
+66,Hard,Esai,30,"Apa output dari kode berikut:
 def f(s):
     return s == s[::-1]
 
 print(f(""level""))",,,,,True
-67,Hard,Esai,"Berapa elemen dalam dict(a=1, b=2, c=3)?",,,,,3
-68,Hard,Esai,"Apa hasil pembalikan string ""python""::-1]?",,,,,nohtyp
-69,Hard,Esai,"Apa output dari kode berikkut:
+67,Hard,Esai,30,"Berapa elemen dalam dict(a=1, b=2, c=3)?",,,,,3
+68,Hard,Esai,30,"Apa hasil pembalikan string ""python""[::-1]?",,,,,nohtyp
+69,Hard,Esai,30,"Apa output dari kode berikkut:
 print("".join(sorted(""chatgpt"")))",,,,,acghptt
-70,Hard,Esai,"cari hasil output dari kode berikut:
+70,Hard,Esai,30,"cari hasil output dari kode berikut:
 a = [1, 2, 3]
 b = a[:]
 a[0] = 10
 print(b[0])",,,,,1
-71,Hard,Esai,"Cari hasil output dari kode berikut:
+71,Hard,Esai,30,"Cari hasil output dari kode berikut:
 data = [(""a"", 1), (""b"", 2), (""c"", 3)]
 d = dict(data)
 d[""d""] = d[""b""] + d[""c""]
 print(d[""d""])",,,,,5
-72,Hard,Esai,"Apa output dari kode berikut:
+72,Hard,Esai,30,"Apa output dari kode berikut:
 words = [""python"", ""is"", ""awesome""]
 res = """"
 for w in words:
     res += w[0].upper()
 print(res)",,,,,PIA 
-73,Hard,Esai,"Cari hasil output dari kode berikut:
+73,Hard,Esai,30,"Cari hasil output dari kode berikut:
 x = [i for i in range(10) if i % 2 == 0]
 x = list(map(lambda i: i * 3, x))
 print(sum(x))",,,,,60
-74,Hard,Esai,"Apa output dari kode berikut:
+74,Hard,Esai,30,"Apa output dari kode berikut:
 text = ""mississippi""
 unique = """"
 for c in text:
     if c not in unique:
         unique += c
 print(unique)",,,,,misp 
-75,Hard,Esai,"Cari hasil output dari kode berikut:
+75,Hard,Esai,30,"Cari hasil output dari kode berikut:
 def rotate_right(arr):
     return arr[-1:] + arr[:-1]
 
@@ -255,7 +255,7 @@ a = [1, 2, 3, 4]
 for _ in range(3):
     a = rotate_right(a)
 print(a)",,,,,"[2, 3, 4, 1]"
-76,Hard,Esai,"Cari hasil output dari kode berikut:
+76,Hard,Esai,30,"Cari hasil output dari kode berikut:
 def check_primes(n):
     primes = []
     for num in range(2, n+1):
@@ -267,35 +267,34 @@ def check_primes(n):
     return len(primes)
 
 print(check_primes(10))",,,,,4
-77,Hard,Esai,"Apa output dari kode berikut:
+77,Hard,Esai,30,"Apa output dari kode berikut:
 print((3 > 2) and (2 < 5))",,,,,True 
-78,Hard,Esai,"Apa output dari kode berikut:
+78,Hard,Esai,30,"Apa output dari kode berikut:
 a = ""hello""
 print(a[1:4])",,,,,ell
-79,Hard,Esai,"Apa output dari kode berikut:
+79,Hard,Esai,30,"Apa output dari kode berikut:
 print({1, 2, 3} == {3, 2, 1})",,,,,True 
-80,Hard,Esai,"Cari hasil output dari kode berikut:
+80,Hard,Esai,30,"Cari hasil output dari kode berikut:
 x = list(range(3))
 x.pop()
 print(x)",,,,,"[0, 1]"
-81,Easy,PG,Simbol perkalian dalam Python adalah?,*,/,+,-,A
-82,Easy,PG,Simbol penjumlahan dalam Python adalah?,*,/,+,-,C
-83,Easy,PG,Apa tipe data dari nilai True di Python?,Integer,String,Boolean,Float,C
-84,Easy,PG,Fungsi input() di Python digunakan untuk?,Menampilkan output,Membaca input dari pengguna,Menyimpan file,Menjalankan loop,B
-85,Easy,PG,Apa hasil dari print(5 // 2)?,2.5,3,2,2.0,C
-86,Easy,PG,Struktur kontrol if digunakan untuk?,Pengulangan,Menentukan kondisi,Menyimpan data,Mengimpor library,B
-87,Easy,PG,"Apa output dari print(""Halo"" + ""Dunia"")?", Halo Dunia,HaloDunia,HaloDunia,Error,B
-88,Easy,PG,List di Python ditandai dengan tanda?,{},<>,[],,C
-89,Easy,PG,Fungsi len() digunakan untuk?,Menjumlahkan semua elemen,Menghapus elemen,Menghitung panjang data,Mengulang elemen,C
-90,Easy,PG,Variabel di Python bisa diawali dengan?,Angka,Tanda baca,Huruf atau _ (underscore),Spasi,C
-91,Easy,PG,Fungsi print() digunakan untuk?,Mengambil input,Menampilkan data ke layar,Menyimpan data,Mengulang perintah,B
-92,Easy,PG,Apa hasil dari 2 ** 3 dalam Python?,5,6,8,9,C
-93,Easy,PG,Manakah dari berikut ini adalah komentar dalam Python?,// komentar,/* komentar */,# komentar,-- komentar,C
-94,Easy,PG,Struktur pengulangan yang benar dalam Python adalah?,repeat 5 times:,loop (5),for i in 5:,for i in range(5):,D
-95,Easy,PG,Pernyataan x = 10 berarti?,Menampilkan nilai x,Membandingkan x dengan 10,Menyimpan nilai 10 ke variabel x,Menghapus x,C
-96,Easy,PG,Apa arti x != y dalam Python?,x sama dengan y,x kurang dari y,x tidak sama dengan y,x lebih dari y,C
-97,Easy,PG,Bagaimana cara menyimpan beberapa nilai dalam satu variabel?,Gunakan integer,Gunakan string,Gunakan list,Gunakan bool,C
-98,Easy,PG,Apa tipe data dari nilai True di Python?,Integer,String,Boolean,Float,C
-99,Easy,PG,Tipe data dari 3.14 dalam Python adalah?,Integer,String,Float,Boolean,C
-100,Easy,PG,Manakah dari berikut ini yang merupakan nama variabel yang valid?,2data,data_1,nama-data,if,B
-
+81,Easy,PG,10,Simbol perkalian dalam Python adalah?,*,/,+,-,A
+82,Easy,PG,10,Simbol penjumlahan dalam Python adalah?,*,/,+,-,C
+83,Easy,PG,10,Apa tipe data dari nilai True di Python?,Integer,String,Boolean,Float,C
+84,Easy,PG,10,Fungsi input() di Python digunakan untuk?,Menampilkan output,Membaca input dari pengguna,Menyimpan file,Menjalankan loop,B
+85,Easy,PG,10,Apa hasil dari print(5 // 2)?,2.5,3,2,2.0,C
+86,Easy,PG,10,Struktur kontrol if digunakan untuk?,Pengulangan,Menentukan kondisi,Menyimpan data,Mengimpor library,B
+87,Easy,PG,10,"Apa output dari print(""Halo"" + ""Dunia"")?", Halo Dunia,HaloDunia,HaloDunia,Error,B
+88,Easy,PG,10,List di Python ditandai dengan tanda?,{},<>,[],,C
+89,Easy,PG,10,Fungsi len() digunakan untuk?,Menjumlahkan semua elemen,Menghapus elemen,Menghitung panjang data,Mengulang elemen,C
+90,Easy,PG,10,Variabel di Python bisa diawali dengan?,Angka,Tanda baca,Huruf atau _ (underscore),Spasi,C
+91,Easy,PG,10,Fungsi print() digunakan untuk?,Mengambil input,Menampilkan data ke layar,Menyimpan data,Mengulang perintah,B
+92,Easy,PG,10,Apa hasil dari 2 ** 3 dalam Python?,5,6,8,9,C
+93,Easy,PG,10,Manakah dari berikut ini adalah komentar dalam Python?,// komentar,/* komentar */,# komentar,-- komentar,C
+94,Easy,PG,10,Struktur pengulangan yang benar dalam Python adalah?,repeat 5 times:,loop (5),for i in 5:,for i in range(5):,D
+95,Easy,PG,10,Pernyataan x = 10 berarti?,Menampilkan nilai x,Membandingkan x dengan 10,Menyimpan nilai 10 ke variabel x,Menghapus x,C
+96,Easy,PG,10,Apa arti x != y dalam Python?,x sama dengan y,x kurang dari y,x tidak sama dengan y,x lebih dari y,C
+97,Easy,PG,10,Bagaimana cara menyimpan beberapa nilai dalam satu variabel?,Gunakan integer,Gunakan string,Gunakan list,Gunakan bool,C
+98,Easy,PG,10,Apa tipe data dari nilai True di Python?,Integer,String,Boolean,Float,C
+99,Easy,PG,10,Tipe data dari 3.14 dalam Python adalah?,Integer,String,Float,Boolean,C
+100,Easy,PG,10,Manakah dari berikut ini yang merupakan nama variabel yang valid?,2data,data_1,nama-data,if,B
