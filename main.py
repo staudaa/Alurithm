@@ -1,5 +1,6 @@
 import csv
 import os
+import time
 from Logic_BFS_DFS import graf_labirin
 from auth import login, register
 
@@ -28,6 +29,8 @@ def main_game():
     persentase = 100
     skor_sementara = 0
     hasil = ' '
+
+    waktu_mulai = time.time()
 
     while posisi != 'OUT':
         tingkat = tingkat_node(posisi)
@@ -83,6 +86,11 @@ def main_game():
         else:
             print("Tidak ada jalur lanjutan.")
             break
+
+    waktu_selesai = time.time()
+    durasi = int(waktu_selesai - waktu_mulai)
+    menit = durasi // 60
+    detik = durasi % 60
     
     skor_maks = 100
     total_node_terpendek = 3
@@ -102,7 +110,8 @@ def main_game():
     if posisi == 'OUT':
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
         print (f"Skor akhir anda: {skor_akhir} poin")
-        
+
+    print(f"\n⏱️ Total waktu bermain: {menit} menit {detik} detik")    
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
 
