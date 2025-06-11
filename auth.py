@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-file_path = 'db/accounts.csv'
+file_path = r'D:\KULIAH\ALGO II\Alurithm P2\Alurithm\db\accounts.csv'
 
 def accountData():
     if not os.path.isfile(file_path) or os.path.getsize(file_path) == 0:

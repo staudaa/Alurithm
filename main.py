@@ -2,10 +2,12 @@ import csv
 import os
 from Logic_BFS_DFS import graf_labirin
 from auth import login, register
+from leaderboard import add_score, display_leaderboard
+import pandas as pd
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('db\\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open(r'D:\KULIAH\ALGO II\Alurithm P2\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
@@ -20,7 +22,8 @@ def tingkat_node(node):
         return 'Hard'
     return None
 
-def main_game():
+def main_game(username):
+    
     soal_map = load_soal()
     posisi = 'IN'
     riwayat = [posisi]
@@ -101,7 +104,12 @@ def main_game():
         skor_akhir = min(pembulatan_5(skor_akhir), skor_maks)
     if posisi == 'OUT':
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
-        print (f"Skor akhir anda: {skor_akhir} poin")
+        print(f"Skor akhir anda: {skor_akhir} poin")
+
+        # Simpan skor ke leaderboard
+        add_score(username, skor_akhir)
+        print("\nBerikut adalah leaderboard terbaru:")
+        display_leaderboard()
         
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
@@ -122,13 +130,14 @@ def autentikasi(username):
         print("3. Logout")
         pilihan = input("Masukkan pilihan (1/2/3): ").strip()
         if pilihan == '1':
-            print("Tampilkan leaderboard")
+            display_leaderboard()
+            input("\nTekan Enter untuk kembali ke menu...")
         elif pilihan == '2':
             print("1. Mulai")
             print("2. Kembali")
             menu = input("Masukkan pilihan menu (1/2) : ")
             if menu == "1" : 
-                main_game()
+                main_game(username)
             elif menu == "2" :
                 continue
         elif pilihan == '3':
