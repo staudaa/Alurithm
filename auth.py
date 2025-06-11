@@ -15,7 +15,7 @@ def login(errorMsg=False):
     os.system('cls')
     
     if errorMsg:
-        print(f"\n{' ' * 10} {errorMsg} ❌\n")
+        print(f"\n{' ' * 10} {errorMsg} \n")
         
     print("-"*80)
     print(f"|{' ' * 78}|")
@@ -30,10 +30,13 @@ def login(errorMsg=False):
         accounts = accountData()
         account = accounts[accounts['Username'] == username]
         
-        if account.empty or account.iloc[0]["Password"].strip() != password:
+        if account.empty:
+            return login("Maaf Username Atau Password Yang Anda Berikan Salah!")
+        if account.iloc[0]["Password"].strip() != password:
             print(f"Password mismatch: '{account.iloc[0]['Password']}' != '{password}'")
             return login("Maaf Username Atau Password Yang Anda Berikan Salah!")
         break
+    
     return [account.iloc[0]["Username"]]
   
 def addAccount(username=None, password=None):
@@ -56,7 +59,7 @@ def register(errorMsg=False):
     os.system('cls' if os.name == 'nt' else 'clear')
     
     if errorMsg:
-        print(f"\n{' ' * 10} {errorMsg} ❌\n")
+        print(f"\n{' ' * 10} {errorMsg} \n")
         
     print("-" * 80)
     print(f"|{' ' * 78}|")
@@ -67,7 +70,7 @@ def register(errorMsg=False):
     while True:
         username = input("\nMasukkan Username (minimal 3 character!): ").strip()
         password = input("Masukkan Password (minimal 5 character!): ").strip()
-        confirmedPassword = input("🔐 Konfirmasi Ulang Password: ").strip()
+        confirmedPassword = input("Konfirmasi Ulang Password: ").strip()
         
         if not username:
             return register("Username tidak boleh hanya berupa spasi!")

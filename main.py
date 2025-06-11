@@ -111,7 +111,7 @@ def main_game():
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
         print (f"Skor akhir anda: {skor_akhir} poin")
 
-    print(f"\n⏱️ Total waktu bermain: {menit} menit {detik} detik")    
+    print(f"\nTotal waktu bermain: {menit} menit {detik} detik")    
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
 
@@ -160,8 +160,7 @@ def main():
         elif pilihan == '2':
             username = login()
             if username:
-                # Call the autentikasi function with the logged-in username
-                autentikasi(username[0])  # username is a list, so we take the first element
+                autentikasi(username[0])
         elif pilihan == '3':
             print("Terima kasih sudah mencoba. Sampai jumpa!")
             break
