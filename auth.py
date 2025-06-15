@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-file_path = r'D:\KULIAH\ALGO II\Alurithm P2\Alurithm\db\accounts.csv'
+file_path = r"D:\COLLEGE LIFE\Semester 2\Project Algo II non-fix\Alurithm\db\accounts.csv"
 
 def accountData():
     if not os.path.isfile(file_path) or os.path.getsize(file_path) == 0:
@@ -67,6 +67,7 @@ def register(errorMsg=False):
     while True:
         username = input("\nMasukkan Username (minimal 3 character!): ").strip()
         password = input("Masukkan Password (minimal 5 character!): ").strip()
+        os.system('cls' if os.name == 'nt' else 'clear')
         confirmedPassword = input("🔐 Konfirmasi Ulang Password: ").strip()
         
         if not username:

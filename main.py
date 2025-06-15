@@ -4,10 +4,14 @@ from Logic_BFS_DFS import graf_labirin
 from auth import login, register
 from leaderboard import add_score, display_leaderboard
 import pandas as pd
+import time
+
+def bersihkan_layar():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open(r'D:\KULIAH\ALGO II\Alurithm P2\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('D:\COLLEGE LIFE\Semester 2\Project Algo II non-fix\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
@@ -31,8 +35,10 @@ def main_game(username):
     persentase = 100
     skor_sementara = 0
     hasil = ' '
+    waktu_mulai = time.time()
 
     while posisi != 'OUT':
+        bersihkan_layar()
         tingkat = tingkat_node(posisi)
         if not soal_map[tingkat]:
             print(f"Tidak ada soal tersedia untuk tingkat {tingkat}.")
@@ -62,7 +68,7 @@ def main_game(username):
             bobot_soal = int(soal['Poin'])
             poin = int(bobot_soal * (persentase / 100))
             skor_sementara += poin
-            print(f"\nAnda mendapatkan {bobot_soal} poin \nTotal skor Anda sekarang: {skor_sementara} poin")
+            # print(f"\nAnda mendapatkan {bobot_soal} poin \nTotal skor Anda sekarang: {skor_sementara} poin")
         else:
             hasil = 'salah'
             print("Jawaban Salah! ")
@@ -87,6 +93,11 @@ def main_game(username):
             print("Tidak ada jalur lanjutan.")
             break
     
+    waktu_selesai = time.time()
+    durasi = int(waktu_selesai - waktu_mulai)
+    menit = durasi // 60
+    detik = durasi % 60
+    
     skor_maks = 100
     total_node_terpendek = 3
     total_node_dilalui = len(riwayat)
@@ -103,14 +114,15 @@ def main_game(username):
         skor_maks = 50
         skor_akhir = min(pembulatan_5(skor_akhir), skor_maks)
     if posisi == 'OUT':
+        bersihkan_layar()
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
         print(f"Skor akhir anda: {skor_akhir} poin")
 
-        # Simpan skor ke leaderboard
         add_score(username, skor_akhir)
         print("\nBerikut adalah leaderboard terbaru:")
         display_leaderboard()
-        
+    
+    print(f"\nTotal waktu bermain: {menit} menit {detik} detik")      
     print("\nRute yang ditempuh:")
     print(" → ".join(riwayat))
 
@@ -119,9 +131,9 @@ def main_game(username):
 def pembulatan_5 (n):
     return round(n / 5) * 5
 
-
 def autentikasi(username):
     while True:
+        bersihkan_layar()
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Selamat datang, {username}!")
         print("\nMenu:")
@@ -130,9 +142,11 @@ def autentikasi(username):
         print("3. Logout")
         pilihan = input("Masukkan pilihan (1/2/3): ").strip()
         if pilihan == '1':
+            bersihkan_layar()
             display_leaderboard()
             input("\nTekan Enter untuk kembali ke menu...")
         elif pilihan == '2':
+            bersihkan_layar()
             print("1. Mulai")
             print("2. Kembali")
             menu = input("Masukkan pilihan menu (1/2) : ")
@@ -141,6 +155,7 @@ def autentikasi(username):
             elif menu == "2" :
                 continue
         elif pilihan == '3':
+            bersihkan_layar()
             print("Anda telah logout.")
             break
         else:
@@ -148,7 +163,7 @@ def autentikasi(username):
 
 def main():
     while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        bersihkan_layar()
         print("Selamat datang di Alurithm! \nPermainan labirin berbasis soal Algoritma dan Pemrograman Dasar")
         print("\nPilih opsi:")
         print("1. Register")
@@ -160,9 +175,9 @@ def main():
         elif pilihan == '2':
             username = login()
             if username:
-                # Call the autentikasi function with the logged-in username
-                autentikasi(username[0])  # username is a list, so we take the first element
+                autentikasi(username[0])  
         elif pilihan == '3':
+            bersihkan_layar()
             print("Terima kasih sudah mencoba. Sampai jumpa!")
             break
         else:
