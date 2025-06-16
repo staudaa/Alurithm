@@ -2,7 +2,7 @@ import csv
 import os
 from Logic_BFS_DFS import graf_labirin
 from auth import login, register
-from leaderboard import add_score, display_leaderboard
+from leaderboard import add_score, display_leaderboard, cari_username
 import pandas as pd
 import time
 
@@ -11,7 +11,7 @@ def bersihkan_layar():
 
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('D:\COLLEGE LIFE\Semester 2\Project Algo II non-fix\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('D:\KULIAH\ALGO II\ALGO_PROJECT\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
@@ -26,8 +26,7 @@ def tingkat_node(node):
         return 'Hard'
     return None
 
-def main_game(username):
-    
+def main_game(username): 
     soal_map = load_soal()
     posisi = 'IN'
     riwayat = [posisi]
@@ -97,6 +96,7 @@ def main_game(username):
     durasi = int(waktu_selesai - waktu_mulai)
     menit = durasi // 60
     detik = durasi % 60
+    waktu_str = f"{menit} menit {detik} detik" 
     
     skor_maks = 100
     total_node_terpendek = 3
@@ -118,7 +118,7 @@ def main_game(username):
         print("\nSelamat! Kamu telah mencapai tujuan akhir!")
         print(f"Skor akhir anda: {skor_akhir} poin")
 
-        add_score(username, skor_akhir)
+        add_score(username, skor_akhir, waktu_str)
         print("\nBerikut adalah leaderboard terbaru:")
         display_leaderboard()
     
@@ -144,7 +144,15 @@ def autentikasi(username):
         if pilihan == '1':
             bersihkan_layar()
             display_leaderboard()
-            input("\nTekan Enter untuk kembali ke menu...")
+            cari = input('\nKetik "C" untuk mencari username di leaderboard\n\nTekan Enter untuk kembali ke menu\n\nMasukkan pilihan: ').strip()
+            if cari == 'c' or cari == 'C':
+                bersihkan_layar()
+                target = input("Masukkan username yang ingin dicari untuk melihat skor dan waktu bermain: ").strip()
+                bersihkan_layar()
+                cari_username(target)                
+                input("\nTekan Enter untuk kembali ke menu...")
+            else:
+                bersihkan_layar()
         elif pilihan == '2':
             bersihkan_layar()
             print("1. Mulai")
