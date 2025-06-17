@@ -5,6 +5,7 @@ from auth import login, register
 from leaderboard import add_score, display_leaderboard, cari_username
 import pandas as pd
 import time
+import random
 
 def bersihkan_layar():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -15,7 +16,15 @@ def load_soal():
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)
-    return soal_map
+    soal_tampilkan = {}
+    for tingkat in soal_map:
+        soal_tampilkan[tingkat] = random.sample(soal_map[tingkat], len(soal_map[tingkat]))
+    return soal_map, soal_tampilkan
+
+def ambil_soal(tingkat, soal_tampilkan):
+    if not soal_tampilkan[tingkat]:
+        return None
+    return soal_tampilkan[tingkat].pop(0)
 
 def tingkat_node(node):
     if node in ['IN']:
@@ -27,7 +36,7 @@ def tingkat_node(node):
     return None
 
 def main_game(username): 
-    soal_map = load_soal()
+    soal_map, soal_tampilkan = load_soal()
     posisi = 'IN'
     riwayat = [posisi]
     nyawa = 3
@@ -39,11 +48,16 @@ def main_game(username):
     while posisi != 'OUT':
         bersihkan_layar()
         tingkat = tingkat_node(posisi)
-        if not soal_map[tingkat]:
-            print(f"Tidak ada soal tersedia untuk tingkat {tingkat}.")
+        if not soal_tampilkan[tingkat]:
+            # print(f"Tidak ada soal tersedia untuk tingkat {tingkat}.")
             break
         
-        soal = soal_map[tingkat].pop(0)
+        soal = ambil_soal(tingkat, soal_tampilkan)
+        if soal is None:
+            # print("Semua soal pada tingkat ini telah ditampilkan. Mengacak ulang soal...")
+            soal_tampilkan[tingkat] = random.sample(soal_map[tingkat], len(soal_map[tingkat]))
+            soal = ambil_soal(tingkat, soal_tampilkan)
+            
         print(f"\nLokasi: {posisi} | Tingkat: {tingkat}")
         print(f"{soal['Soal']}")
 
