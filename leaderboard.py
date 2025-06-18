@@ -59,7 +59,11 @@ def display_leaderboard():
     for i, entry in enumerate(data, start=1):
         table_data.append([i, entry['username'], entry['score'], entry['time']])
     
-    print("\n=== Leaderboard ===")
+    print("-"*52)
+    print(f"|{' ' * 50}|")
+    print(f"|{'LEADERBOARD':^50}|")
+    print(f"|{' ' * 50}|")
+    print("-"*52)
     print(tabulate(table_data, headers=headers, tablefmt="grid"))
     
 def merge_sort(data):
@@ -86,7 +90,7 @@ def merge(left, right):
         elif left[0]['score'] < right[0]['score']:
             sorted_list.append(right.pop(0))
         else:
-            # ini buat ngitung kalo scorenya seri baru diliat waya lebih kecil siapa
+            # ini buat ngitung kalo scorenya seri baru diliat waktu yang lebih kecil siapa
             if parse_time(left[0]["time"]) < parse_time(right[0]["time"]):
                 sorted_list.append(left.pop(0))
             else:
