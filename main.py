@@ -1,14 +1,16 @@
 import csv
 import os
-from Logic_BFS_DFS import graf_labirin
-from auth import login, register
-from leaderboard import add_score, display_leaderboard, cari_username
-from colorama import Fore, Style, init
-import pandas as pd
 import time
 import random
 import pyfiglet
 import shutil
+import pandas as pd
+from Logic_BFS_DFS import graf_labirin
+from auth import login, register
+from leaderboard import add_score, display_leaderboard, cari_username
+from visualisasi import visual
+from colorama import Fore, Style, init
+
 
 init()
 
@@ -21,7 +23,7 @@ def print_centered_figlet(text):
     terminal_width = shutil.get_terminal_size().columns
 
     for line in ascii_art.splitlines():
-        print(Fore.BLUE + line.center(terminal_width) + Style.RESET_ALL)
+        print(Fore.MAGENTA + line.center(terminal_width) + Style.RESET_ALL)
     
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
@@ -60,6 +62,7 @@ def main_game(username):
 
         while posisi != 'OUT':
             bersihkan_layar()
+            visual(riwayat)
             if posisi == 'L1' and hasil == 'salah':
                 print(f"Nyawa kamu: {nyawa}")
             tingkat = tingkat_node(posisi)
@@ -155,6 +158,7 @@ def main_game(username):
         print(f"\nTotal waktu bermain: {menit} menit {detik} detik")      
         print("\nRute yang ditempuh:")
         print(" → ".join(riwayat))
+        visual(riwayat)
 
         input("\nTekan Enter untuk kembali ke menu...")
         
@@ -219,7 +223,7 @@ def main():
                 autentikasi(username[0])  
         elif pilihan == '3':
             bersihkan_layar()
-            print("Terima kasih sudah mencoba. Sampai jumpa!")
+            print_centered_figlet("TERIMA KASIH!")
             break
         else:
             print("Pilihan tidak valid. Silakan coba lagi.")

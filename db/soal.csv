@@ -284,7 +284,7 @@ print(x)",,,,,"[0, 1]"
 84,Easy,PG,10,Fungsi input() di Python digunakan untuk?,Menampilkan output,Membaca input dari pengguna,Menyimpan file,Menjalankan loop,B
 85,Easy,PG,10,Apa hasil dari print(5 // 2)?,2.5,3,2,2.0,C
 86,Easy,PG,10,Struktur kontrol if digunakan untuk?,Pengulangan,Menentukan kondisi,Menyimpan data,Mengimpor library,B
-87,Easy,PG,10,"Apa output dari print(""Halo"" + ""Dunia"")?", Halo Dunia,HaloDunia,HaloDunia,Error,B
+87,Easy,PG,10,"Apa output dari print(""Halo"" + ""Dunia"")?",Halo Dunia,HaloDunia,Halodunia,Error,B
 88,Easy,PG,10,List di Python ditandai dengan tanda?,{},<>,[],,C
 89,Easy,PG,10,Fungsi len() digunakan untuk?,Menjumlahkan semua elemen,Menghapus elemen,Menghitung panjang data,Mengulang elemen,C
 90,Easy,PG,10,Variabel di Python bisa diawali dengan?,Angka,Tanda baca,Huruf atau _ (underscore),Spasi,C
