@@ -27,7 +27,7 @@ def print_centered_figlet(text):
     
 def load_soal():
     soal_map = {'Easy': [], 'Medium': [], 'Hard': []}
-    with open('D:\COLLEGE LIFE\Semester 2\ALGORITMA DAN PEMROGRAMAN II\PROJECT ALGO PYFIGLET\Alurithm\db\soal.csv', newline='', encoding='utf-8') as csvfile:
+    with open('db\soal.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             soal_map[row['Tingkat']].append(row)

@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-file_path = r"D:\COLLEGE LIFE\Semester 2\ALGORITMA DAN PEMROGRAMAN II\PROJECT ALGO PYFIGLET\Alurithm\db\accounts.csv"
+file_path = r"db\accounts.csv"
 
 def accountData():
     if not os.path.isfile(file_path) or os.path.getsize(file_path) == 0:
@@ -30,9 +30,13 @@ def login(errorMsg=False):
         accounts = accountData()
         account = accounts[accounts['Username'] == username]
         
-        if account.empty or account.iloc[0]["Password"].strip() != password:
+        if account.empty:
+            return login("Maaf Username Atau Password Yang Anda Berikan Salah!")
+        
+        if account.iloc[0]["Password"].strip() != password:
             print(f"Password mismatch: '{account.iloc[0]['Password']}' != '{password}'")
             return login("Maaf Username Atau Password Yang Anda Berikan Salah!")
+        
         break
     return [account.iloc[0]["Username"]]
   
